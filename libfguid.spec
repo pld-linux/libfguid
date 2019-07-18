@@ -1,24 +1,23 @@
+# m4/libcerror.m4
+%define		libcerror_ver	20120425
 Summary:	Library to support GUID/UUID format
 Summary(pl.UTF-8):	Biblioteka obsługująca format GUID/UUID
 Name:		libfguid
-Version:	20150104
-Release:	2
+Version:	20180724
+Release:	1
 License:	LGPL v3+
 Group:		Libraries
-Source0:	https://github.com/libyal/libfguid/archive/%{version}/%{name}-%{version}.tar.gz
-# Source0-md5:	e19ab864a5338182003f71389fa2d042
-Patch0:		%{name}-system-libs.patch
+#Source0Download: https://github.com/libyal/libfguid/releases
+Source0:	https://github.com/libyal/libfguid/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
+# Source0-md5:	3c1b88ae966876a5dc1db45f99bf46ad
 URL:		https://github.com/libyal/libfguid/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.6
 BuildRequires:	gettext-tools >= 0.18.1
-BuildRequires:	libcerror-devel >= 20120425
-BuildRequires:	libcstring-devel >= 20120425
+BuildRequires:	libcerror-devel >= %{libcerror_ver}
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	sed >= 4.0
-Requires:	libcerror >= 20120425
-Requires:	libcstring >= 20120425
+Requires:	libcerror >= %{libcerror_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -32,8 +31,7 @@ Summary:	Header files for libfguid library
 Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki libfguid
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	libcerror-devel >= 20120425
-Requires:	libcstring-devel >= 20120425
+Requires:	libcerror-devel >= %{libcerror_ver}
 
 %description devel
 Header files for libfguid library.
@@ -55,11 +53,9 @@ Statyczna biblioteka libfguid.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__gettextize}
-%{__sed} -i -e 's/ po\/Makefile.in//' configure.ac
 %{__libtoolize}
 %{__aclocal} -I m4
 %{__autoconf}
