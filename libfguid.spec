@@ -3,13 +3,13 @@
 Summary:	Library to support GUID/UUID format
 Summary(pl.UTF-8):	Biblioteka obsługująca format GUID/UUID
 Name:		libfguid
-Version:	20180724
+Version:	20220113
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libfguid/releases
 Source0:	https://github.com/libyal/libfguid/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	3c1b88ae966876a5dc1db45f99bf46ad
+# Source0-md5:	481ba6a19bcf569ebda3d457e91a38dd
 URL:		https://github.com/libyal/libfguid/
 BuildRequires:	autoconf >= 2.59
 BuildRequires:	automake >= 1.6
