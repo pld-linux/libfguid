@@ -3,19 +3,19 @@
 Summary:	Library to support GUID/UUID format
 Summary(pl.UTF-8):	Biblioteka obsługująca format GUID/UUID
 Name:		libfguid
-Version:	20220113
+Version:	20240116
 Release:	1
 License:	LGPL v3+
 Group:		Libraries
 #Source0Download: https://github.com/libyal/libfguid/releases
 Source0:	https://github.com/libyal/libfguid/releases/download/%{version}/%{name}-alpha-%{version}.tar.gz
-# Source0-md5:	481ba6a19bcf569ebda3d457e91a38dd
+# Source0-md5:	8525e4de2cc5897a3da99c5b040cb36e
 URL:		https://github.com/libyal/libfguid/
-BuildRequires:	autoconf >= 2.59
+BuildRequires:	autoconf >= 2.71
 BuildRequires:	automake >= 1.6
-BuildRequires:	gettext-tools >= 0.18.1
+BuildRequires:	gettext-tools >= 0.21
 BuildRequires:	libcerror-devel >= %{libcerror_ver}
-BuildRequires:	libtool
+BuildRequires:	libtool >= 2:2
 BuildRequires:	pkgconfig
 Requires:	libcerror >= %{libcerror_ver}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
